@@ -15,9 +15,11 @@ def character_count(text):
     lowered_string = text.lower()
     char_counts = {}
     for i in lowered_string:
-        if i in char_counts:
-            char_counts[i] += 1
-        else: char_counts[i] = 1
+        if i.isalpha():
+             if i in char_counts:
+                 char_counts[i] += 1
+             else:
+                char_counts[i] = 1
     return char_counts
 
 with open("books/frankenstein.txt", "r") as file:
