@@ -11,4 +11,20 @@ def word_count():
      
 print (word_count())
 
+def character_count(text):
+    lowered_string = text.lower()
+    char_counts = {}
+    for i in lowered_string:
+        if i in char_counts:
+            char_counts[i] += 1
+        else: char_counts[i] = 1
+    return char_counts
+
+result = character_count("To be or not to be, that is the question!")
+print(result)
+
+
+    
+
+
    
