@@ -20,9 +20,11 @@ def character_count(text):
         else: char_counts[i] = 1
     return char_counts
 
-result = character_count("To be or not to be, that is the question!")
-print(result)
+with open("books/frankenstein.txt", "r") as file:
+    content = file.read()
 
+result = character_count(content)
+print(result)
 
     
 
