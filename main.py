@@ -9,7 +9,6 @@ def word_count():
          word = words.split()
          return len(word)
      
-print (word_count())
 
 def character_count(text):
     lowered_string = text.lower()
@@ -26,7 +25,33 @@ with open("books/frankenstein.txt", "r") as file:
     content = file.read()
 
 result = character_count(content)
-print(result)
+resultlist = list(result.items())
+
+def sort_on(resultlist):
+    return resultlist[1]
+resultlist.sort(key=sort_on, reverse=True)
+
+
+print("--- Begin report of books/frankenstein.txt ---")
+print (word_count(), "words found in the document")
+print ()
+
+
+def row_print(resultlist):
+    for char, count in resultlist:
+        print(f"The '{char}' character was found {count} times")
+
+row_print(resultlist)
+
+
+
+
+
+
+
+
+
+
 
     
 
